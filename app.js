@@ -7,7 +7,6 @@ let amigos= []
 
 amigo=''
 
-listado = []
 
 amigoAmostrar= []
 
@@ -31,22 +30,23 @@ function agregarAmigo(){
 
 function mostrarlista(){
     let elementohtml = document.getElementById('listaAmigos');
-    elementohtml.innerHTML= '';  
-    for (var x of amigos){
-        elementohtml.appendChild(x)
-    }  
+    elementohtml.innerHTML= ''; 
+    let fLen = amigos.length; 
+    for (let i = 0; i < fLen; i++) {
+        text += "<li>" + amigos[i] + "</li>";
+      } 
 }
 
 mostrarlista
 
 function generarnumeroaleatorio(){
-    return Math.floor(Math.random() * 11);
+    total=amigos.length
+    return Math.floor(Math.random() * total);
 }
 
 function sortearAmigo(){
-    numeroaleatorio= generarnumeroaleatorio()
     let sorteado= document.getElementById('resultado')
-    sorteado.innerHTML(amigos[numeroaleatorio])
+    sorteado.innerText=amigos[generarnumeroaleatorio()]
 }
 
 
