@@ -25,7 +25,7 @@ function agregarAmigo(){
     }else{
         alert('Ingresa un nombre!')
     }
-    
+    vaciar('amigo') 
 }
 
 /*
@@ -41,10 +41,10 @@ function mostrarlista(){
 ``
 */
 function mostrarlista(x){
+    if(x){
         let elemento= `<li>${x}</li>`
     lista.insertAdjacentHTML(`beforeend`,elemento)
-
-
+    }
 }
 
 function generarnumeroaleatorio(){
