@@ -28,18 +28,6 @@ function agregarAmigo(){
     vaciar('amigo') 
 }
 
-/*
-function mostrarlista(){
-
-    let elementohtml = document.getElementById('listaAmigos');
-    elementohtml.innerHTML= ''; 
-    let fLen = amigos.length; 
-    for (let i = 0; i < fLen; i++) {
-        elementohtml.innerText= `<li> ${amigos[i]} </li>`;
-      } 
-}
-``
-*/
 function mostrarlista(x){
     if(x){
         let elemento= `<li>${x}</li>`
