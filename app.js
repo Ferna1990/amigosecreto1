@@ -8,36 +8,44 @@ let amigos= []
 amigo=''
 
 
-amigoAmostrar= []
+let lista= document.getElementById(`listaAmigos`)
 
-function vaciar(){
-    let valorcaja = document.getElementById('amigo')
+function vaciar(elemento){
+    let valorcaja = document.getElementById(elemento)
     valorcaja.value = ''
 }
+
 
 function agregarAmigo(){
     amigo=document.getElementById('amigo').value
     if (amigo){
         amigos.push(amigo)
-        vaciar() 
+        mostrarlista(amigo)
+        vaciar('amigo')
     }else{
         alert('Ingresa un nombre!')
     }
     
 }
 
-
-
+/*
 function mostrarlista(){
+
     let elementohtml = document.getElementById('listaAmigos');
     elementohtml.innerHTML= ''; 
     let fLen = amigos.length; 
     for (let i = 0; i < fLen; i++) {
-        text += "<li>" + amigos[i] + "</li>";
+        elementohtml.innerText= `<li> ${amigos[i]} </li>`;
       } 
 }
+``
+*/
+function mostrarlista(x){
+        let elemento= `<li>${x}</li>`
+    lista.insertAdjacentHTML(`beforeend`,elemento)
 
-mostrarlista
+
+}
 
 function generarnumeroaleatorio(){
     total=amigos.length
@@ -48,8 +56,6 @@ function sortearAmigo(){
     let sorteado= document.getElementById('resultado')
     sorteado.innerText=amigos[generarnumeroaleatorio()]
 }
-
-
 
 
 
